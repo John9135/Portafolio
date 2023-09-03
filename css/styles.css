@@ -123,19 +123,21 @@ main {
 }
 
 @media screen and (min-width:720px) {
-    .column--right {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, min-content);
+    .card__content--education {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
 .card {
+    margin-top: 1em;
     padding: 1em;
     background-color: var(--bg-card-color);
     border-radius: var(--border-radius);
 }
 
-.card__image-container {
+.card__image--container {
     min-width: 320px;
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -145,17 +147,20 @@ main {
     padding: 1em 0;
 }
 
+
 .card__title {
     margin: 0;
+    margin-bottom: 1em;
     font-size: 2rem;
 }
 
-.card_subtitle {
+.card__subtitle {
     font-size: 0.9rem;
     opacity: 0.8;
 }
 
 .card__link {
+    margin: 0;
     margin-bottom: 1em;
     display: flex;
 }
@@ -165,44 +170,94 @@ main {
     line-height: 1.6;
 }
 
-.education {
-    padding: 1em 0;
+@media screen and (min-widht: 720px) {
+    .card--project {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-column: 1/-1;
+    }
+
+    .project {
+        margin-left: 2em;
+    }
+
+    .project__tags {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5em, 0;
+        font-size: 0.6rem;
+        width: 275px;
+    }
 }
 
-.icon {
-    margin-right: 0.5em;
-}
-
-.card__content_education {
-    display: block;
-    justify-content: space-between;
-}
-
-.card__content_education h2 {
+.project__tags {
     display: flex;
-    margin-top: 0;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    font-size: 0.6rem;
+}
+
+.project__tag {
+    padding: 0.4em 0.8em;
     border-radius: var(--border-radius);
-    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
 }
 
-.card__education {
+.buttons {
     display: flex;
-    align-items: center;
-    justify-content: baseline;
-    gap: 0.5rem;
-}
-
-.row_title {
-    display: flex;
-    align-items: center;
-    font-size: 32px;
-    background-color: var(--bg-card-color);
-}
-
-.card_education_title {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    font-size: 20px;
+    width: 225px;
+}
+
+.button {
+    width: 100px;
+    line-height: 2.5;
+    text-align: center;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+
+}
+
+.button--primary {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.button--ghost {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.content {
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.content__image {
+    max-width: 15%;
+    margin-right: 1em;
+}
+
+.content__time {
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+}
+
+.content__job {
+    margin: 0;
+    margin: 0.5em;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.content__description {
+    font-size: 0.8rem;
+    margin-bottom: 1.5em;
 }
